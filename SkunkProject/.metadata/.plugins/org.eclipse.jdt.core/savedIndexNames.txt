@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Working_Files\St._Thomas\!SEIS635 Level\Project\SkunkProject\SkunkProject\.metadata\.plugins\org.eclipse.jdt.core
+3497447299.index
