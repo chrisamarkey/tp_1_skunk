@@ -18,6 +18,7 @@ public class Dice
 	private int lastRoll;
 	private Die die1;
 	private Die die2;
+	public int RollType;
 
 	// Constructors (object initializers) also can be declared anywhere
 	// Convention: after instance fields/variables

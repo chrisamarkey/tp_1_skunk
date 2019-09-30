@@ -9,6 +9,10 @@ public class SkunkApp {
 		
 		Die dien;
 		
+		// Decide whether to do a die random # or sequential # generation.
+		StdOut.println("Enter a '1' for a random die # generation or a '0' for sequential die # generation.");
+		int RollType = StdIn.readInt();
+		
 		dien = new Die();
 		dien.roll();
 		
