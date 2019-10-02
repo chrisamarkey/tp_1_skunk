@@ -2,13 +2,28 @@
 public class Die
 {
 	private int lastRoll;
-	public int RollType;
+	private int RollType = 0;
+	// Since the Die constructor did not import the int[] properly, I added the int[] here:
+	private int[] seqRoll = {1,2,3,4,5,6};
+	private int i = 0;
+	// private boolean predictable = false;
+	// private int indexOfNextRoll; 
 	
 	public Die()
 	{
 		this.roll();
 	}
 
+	public Die(int[] seqRolls)
+	{
+		// predictable = true;
+		this.roll();
+		this.seqRoll = seqRolls;
+//		this.lastRoll = seqRoll[0];
+		// this.indexOfNextRoll = 0;
+		
+	}
+	
 	public int getLastRoll() // getter or accessor method
 	{
 
@@ -22,15 +37,17 @@ public class Die
 		this.lastRoll = (int) (Math.random() * 6 + 1);
 		}
 		else {
-		this.lastRoll = 1;
+//			while (i < 5) {
+			this.lastRoll = seqRoll[i];
+			i++;
+			if (i == 6) {
+				i = 0;
+			// this.lastRoll = this.rolls[indexOfNextRoll]
+			// indexOfNextRoll++
 		}
-		int i = 1;
-		while (i < 7)
-		{
-			i += 1;
 		}
 		}
-
+	
 	@Override
 	public String toString() // this OVERRIDES the default Object.toString()
 	{
