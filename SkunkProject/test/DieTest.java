@@ -70,4 +70,46 @@ public class DieTest {
 //		assertEquals("First value not 1", 1, value);
 //
 //	}
+	
+
+	@Test
+	public void testRoll0() {
+	  int counter = 0;
+	  while (counter <= 100) {
+	    int initiateValue1 = (int) (Math.random() * 6 + 1);
+	    int initiateValue2 = (int) (Math.random() * 6 + 1);
+	    int[] testValue = new int[] { initiateValue1, initiateValue2 };
+	    Die die = new Die(testValue);
+        die.roll();
+        int value = die.getLastRoll();
+ 	    if ( value == 0 ) {
+	      StdOut.print(value + " equals 0!");
+	      fail();
+ 	    } else {
+	      StdOut.print(value + " doesn't equal 0");
+ 	    }
+ 	  counter++;
+	  }
+	}
+
+	@Test
+	public void testRoll7() {
+	  int counter = 0;
+	  while (counter <= 100) {
+	    int initiateValue1 = (int) (Math.random() * 6 + 1);
+	    int initiateValue2 = (int) (Math.random() * 6 + 1);
+	    int[] testValue = new int[] { initiateValue1, initiateValue2 };
+	    Die die = new Die(testValue);
+        die.roll();
+        int value = die.getLastRoll();
+ 	    if ( value >= 7 ) {
+	      StdOut.print(value + " is greater than or equal to 7!");
+	      fail();
+ 	    } else {
+	      StdOut.print(value + " doesn't equal 7");
+ 	    }
+ 	  counter++;
+	  }
+	}
+	
 }
