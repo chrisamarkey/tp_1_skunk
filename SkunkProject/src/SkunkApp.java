@@ -22,9 +22,35 @@ public class SkunkApp {
 		dien.roll();
 		StdOut.print(dien);
 		
-		// Hopefully this question can be used when a player start their rolls and after each subsequent roll.
-		StdOut.println("Do you want to roll? Please enter a 'yes' or 'no' answer.");
-		int continueToRoll = StdIn.readInt();	
+		Roll mainRoll = new Roll(); 
+		
+		while ( true )
+		{
+
+		  // Hopefully this question can be used when a player start their rolls and after each subsequent roll.
+		  StdOut.println("Do you want to roll again? Please enter a 'yes' or 'no' answer.");
+		  String continueToRoll = StdIn.readString().toLowerCase();	
+		  if (continueToRoll.equals("yes"))
+		  {
+            StdOut.println("Rolling again");
+  		    Die dienCont;
+  		    dienCont = new Die();
+  		    dienCont.roll();
+  		    StdOut.print(dienCont);
+		  }
+		  else if (continueToRoll.equals("no"))
+		  {
+			 StdOut.println("Ending turn");
+			 StdOut.println("Roll score: " + mainRoll.getRollScore());
+			 StdOut.println("Score for turn: " + mainRoll.getTurnScore());
+			 break;
+		  }
+		  else 
+		  {
+			 StdOut.println("Please enter 'yes' or 'no'"); 
+		  }
+	      	
+		}
 		
 	} 
 	

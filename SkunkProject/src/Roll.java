@@ -18,7 +18,6 @@ public class Roll {
 //		die1.roll();
 //		this.die2 = new Die();
 //		die2.roll();
-//		rollScore = die1.getLastRoll() + die2.getLastRoll();
 		// Double Skunk rolled
 		if ((die1.getLastRoll()==1)&(die2.getLastRoll()==1))
 		{
@@ -38,7 +37,7 @@ public class Roll {
 			loseTurn = true;
 		}
 
-		// Skunk Duece rolled
+		// Skunk Deuce rolled
 		else if((die1.getLastRoll()==1&die2.getLastRoll()==2)||(die1.getLastRoll()==2&die2.getLastRoll()==1))
 		{
 			rollScore = 0;
@@ -47,7 +46,7 @@ public class Roll {
 			loseTurn = true;
 		}
 		else rollScore = newDice.getLastRoll();
-		
+	    turnScore = turnScore + rollScore;	
 		return turnScore;
 
 	}
