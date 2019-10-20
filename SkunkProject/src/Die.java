@@ -1,17 +1,15 @@
 public class Die
 {
 	private int lastRoll;
-	private int RollType = 0;
+	private int RollType = 1;
 	// Since the Die constructor did not import the int[] properly, I added the int[] here:
 	private int[] seqRoll = {1,2,3,4,5,6};
-	int i = 0;
-//	private int j;
+	int i = 1;
 	// private boolean predictable = false;
 	// private int indexOfNextRoll; 
 	
 	public Die()
 	{
-//		j = 5;
 		this.roll();
 	}
 
@@ -20,7 +18,6 @@ public class Die
 		// predictable = true;
 		this.roll();
 		this.seqRoll = seqRolls;
-//		j = 5;
 //		this.lastRoll = seqRoll[0];
 		// this.indexOfNextRoll = 0;
 		
@@ -40,7 +37,6 @@ public class Die
 		}
 		else {
 //			while (i < 5) {
-//			int i = 0;
 			this.lastRoll = seqRoll[i];
 			if (seqRoll[i] < 6) {
 				i++;

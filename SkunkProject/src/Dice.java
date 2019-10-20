@@ -16,7 +16,6 @@ public class Dice
 	// Convention: put at top
 
 	private int lastRoll;
-	private int RollType;
 	private Die die1;
 	private Die die2;
 
