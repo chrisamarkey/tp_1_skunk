@@ -17,12 +17,18 @@ public class SkunkApp {
 		StdOut.println("Enter a '1' for a random die # generation or a '0' for sequential die # generation.");
 		int RollType = StdIn.readInt();
 
-		Die dien;
-		dien = new Die();
-		dien.roll();
-		StdOut.print(dien);
+//		Dice dien;
+//		dien = new Dice();
+//		dien.roll();
+//		StdOut.print(dien);
 		
-		Roll mainRoll = new Roll(); 
+//		Dice dice = new Dice();
+//		dice.roll();
+//		StdOut.println(dice);
+		
+		Roll roll = new Roll();
+		roll.throwDice();
+		StdOut.println(roll.getRollScore());
 		
 		while ( true )
 		{
@@ -33,16 +39,18 @@ public class SkunkApp {
 		  if (continueToRoll.equals("yes"))
 		  {
             StdOut.println("Rolling again");
-  		    Die dienCont;
-  		    dienCont = new Die();
-  		    dienCont.roll();
-  		    StdOut.print(dienCont);
+//  		Dice dienCont;
+// 		    dienCont = new Dice();
+//  		dienCont.roll();
+//  		StdOut.print(dienCont);
+            roll.throwDice();
+            StdOut.println(roll.getRollScore());
 		  }
 		  else if (continueToRoll.equals("no"))
 		  {
 			 StdOut.println("Ending turn");
-			 StdOut.println("Roll score: " + mainRoll.getRollScore());
-			 StdOut.println("Score for turn: " + mainRoll.getTurnScore());
+			 StdOut.println("Roll score: " + roll.getRollScore());
+			 StdOut.println("Score for turn: " + roll.getTurnScore());
 			 break;
 		  }
 		  else 

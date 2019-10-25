@@ -17,7 +17,7 @@ public class Die
 	{
 		// predictable = true;
 		this.roll();
-//		this.seqRoll = seqRolls;
+		this.seqRoll = seqRolls;
 //		this.lastRoll = seqRoll[0];
 		// this.indexOfNextRoll = 0;
 		
