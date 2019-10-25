@@ -67,7 +67,7 @@ public class Roll {
 	}
 	
 	public void setRollScore() {
-		rollScore = 3;
+//		rollScore = 3;
 	}
 
 	public int getRollScore() {
