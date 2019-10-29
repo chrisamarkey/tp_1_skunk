@@ -1,5 +1,7 @@
 import edu.princeton.cs.introcs.StdOut;
 
+//import edu.princeton.cs.introcs.StdOut;
+
 public class Roll {
 
 	private int rollScore;
@@ -15,7 +17,11 @@ public class Roll {
 
 	public int throwDice() {
 
-		this.newDice = new Dice();
+		StdOut.println("throwDice() object is constructed now.");
+		this.newDice = new Dice(); 
+//		this.die1 = new Die();
+//		this.die2 = new Die();
+//		this.newDice = new Dice(die1, die2);
 
 		// Double Skunk rolled
 		if (newDice.getLastRoll() == 2) {
@@ -72,6 +78,10 @@ public class Roll {
 
 	public int updateGameScore() {
 		return this.gameScore;
+	}
+	
+	public int updateKitty() {
+		return -this.playerChipCount;
 	}
 
 }

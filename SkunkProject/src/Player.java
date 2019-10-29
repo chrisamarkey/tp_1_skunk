@@ -1,28 +1,33 @@
+import edu.princeton.cs.introcs.StdOut;
 
 public class Player {
 
 	private int chipCount = 50;
 	private int playerScore = 0;
-	int playerTotal = 0;
 	int playerNum = 0;
 	String playerName = null;
 	Player player;
 	Game newGame = new Game();
 	Roll roll = new Roll();
-	Turn turn = new Turn();
+//	Skipping player takes a turn and going directly to Roll class using Roll and Skunk
+//	classes to control the turn and return the results of the turn.
+//	Turn turn = new Turn();
 	
-	public Player() {
+	public Player(int playerCount, String playerID) {
+		this.playerName = playerID;
+		this.playerNum = playerCount;
+			StdOut.println("Player(int playerCount, String playerID) object is constructed now.");
 //			this.playerScore = player.getPlayerScore();
 
 	}
 
 	public void setPlayer() {
 		playerName = newGame.getPlayerName();
-		playerTotal = newGame.getNumPlayers();
+		playerNum = newGame.getNumPlayers();
 	}
 
-	public Player getPlayer() {
-		return this.player;
+	public String getPlayerName() {
+		return this.playerName;
 	}
 
 //	public void setPlayerScore() {

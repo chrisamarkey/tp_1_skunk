@@ -1,4 +1,6 @@
-import edu.princeton.cs.introcs.*;
+import edu.princeton.cs.introcs.StdOut;
+
+//import edu.princeton.cs.introcs.*;
 
 public class Game {
 	
@@ -15,23 +17,12 @@ public class Game {
 		
 	}
 	
-//	public int playGame() {
-//	
-////	StdOut.println("Enter the # of players in this game.");
-////	int numPlayers = StdIn.readInt();
-//	
-////	Turn turnInst;
-////	playerInst = new Player();
-//		
-//		return playTurn.getTurnScore();
-//
-//}
-	
-	public Game(int playerCount, String namesPlayer) {
-		
+	public Game(int playerCount, String playerID) {
+		StdOut.println("Game(int playerCount, String playerID) object is constructed now.");
 		this.numPlayers = playerCount;	
-		this.playersName = namesPlayer;
-		
+		this.playersName = playerID;
+		Player player = new Player(playerCount, playerID);
+
 	}
 	
 	public String getPlayerName()

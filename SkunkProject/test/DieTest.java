@@ -6,6 +6,10 @@ import org.junit.Test;
 
 import edu.princeton.cs.introcs.StdOut;
 
+// Notes: 
+//   1. To use this test class to run all tests except for testRoll0 and testRoll7, you need to set Die class's private int RollType to 0;
+//   2. To use this test class to run testRoll0 and testRoll7, you need to set Die class's private int RollType to 1;
+
 public class DieTest {
 
 	@Before
@@ -58,7 +62,7 @@ public class DieTest {
 		// fail("Not yet implemented");
 		int[] initValues = new int[] { 1, 2, 3, 4, 5, 6 };
 		Die die = new Die(initValues);
-		StdOut.print("Roll 1 = " + die.getLastRoll());
+		StdOut.print("Roll 1 = " + (die.getLastRoll()));
 		die.roll();
 		StdOut.print("Roll 2 = " + die.getLastRoll());
 		die.roll();
@@ -90,10 +94,10 @@ public class DieTest {
         die.roll();
         int value = die.getLastRoll();
  	    if ( value == 0 ) {
-//	      StdOut.print(value + " equals 0!");
+	      StdOut.print(value + " equals 0!");
 	      fail();
  	    } else {
-//	      StdOut.print(value + " doesn't equal 0");
+	      StdOut.print(value + " doesn't equal 0");
  	    }
  	  counter++;
 	  }

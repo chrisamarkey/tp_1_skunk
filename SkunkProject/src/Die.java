@@ -1,20 +1,25 @@
+import edu.princeton.cs.introcs.StdOut;
+
 public class Die
 {
 	private int lastRoll;
 	private int RollType = 1;
 	// Since the Die constructor did not import the int[] properly, I added the int[] here:
 	private int[] seqRoll = {1,2,3,4,5,6};
-	int i = 1;
+//	private Die die = new Die();
+	int i = 0;
 	// private boolean predictable = false;
 	// private int indexOfNextRoll; 
 	
 	public Die()
 	{
+		StdOut.println("Die() object is constructed now.");
 		this.roll();
 	}
 
 	public Die(int[] seqRolls)
 	{
+		StdOut.println("Die(int[] seqRolls) object is constructed now.");
 		// predictable = true;
 		this.roll();
 		this.seqRoll = seqRolls;
@@ -37,9 +42,12 @@ public class Die
 		}
 		else {
 //			while (i < 5) {
+//			StdOut.println("i = " + i);
 			this.lastRoll = seqRoll[i];
+//			StdOut.println("Last roll = " + die.getLastRoll());
 			if (seqRoll[i] < 6) {
 				i++;
+//			StdOut.println("i++ = " + i);
 			// this.lastRoll = this.rolls[indexOfNextRoll]
 			// indexOfNextRoll++
 		}

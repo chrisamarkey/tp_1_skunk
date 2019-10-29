@@ -1,3 +1,4 @@
+import edu.princeton.cs.introcs.StdOut;
 
 public class Turn {
 	
@@ -9,6 +10,7 @@ public class Turn {
 	
 	public void playersTurn()
 	{
+		StdOut.println("playersTurn() object is constructed now.");
 		// Create a Roll class instance to gather turn data.
 		this.rollDice = new Roll();
 		// Double Skunk, SKunk Deuce or Skunk rolled
