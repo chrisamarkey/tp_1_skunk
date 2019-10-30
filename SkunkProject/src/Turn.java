@@ -2,7 +2,7 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class Turn {
 	
-	private int turnScore;
+	private int turnScore = 0;
 	private Roll rollDice;
 //	private boolean declineRoll = false;
 //	private Turn takeTurn = new Turn();

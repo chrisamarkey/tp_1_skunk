@@ -4,12 +4,12 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class Roll {
 
-	private int rollScore;
+	private int rollScore = 0;
 	private int turnScore;
 	private int gameScore;
 	private Dice newDice;
-	private Die die1;
-	private Die die2;
+//	private Die die1;
+//	private Die die2;
 	private boolean loseTurn = false;
 //	private boolean eraseTurnScore = false;
 //	private boolean eraseGameScore = false;
@@ -35,12 +35,13 @@ public class Roll {
 		}
 
 		// Skunk rolled
-		else if ((die1.getLastRoll() == 1 || die2.getLastRoll() == 1)) {
+		else if ((newDice.die1GetLastRoll() == 1 || newDice.die2GetLastRoll() == 1)) {
 			rollScore = 0;
 //			eraseTurnScore = true;
 			turnScore = 0;
 			this.playerChipCount += -1;
 			loseTurn = true;
+			
 		}
 
 		// Skunk Deuce rolled
@@ -53,6 +54,7 @@ public class Roll {
 
 		} else
 			rollScore = newDice.getLastRoll();
+			StdOut.println("This prints the rollScore w/in the Roll class " + rollScore);
 		return rollScore;
 
 	}

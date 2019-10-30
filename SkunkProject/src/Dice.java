@@ -27,9 +27,9 @@ public class Dice {
 		// creating a new instance of each
 
 		this.die1 = new Die();
-		this.roll();
+		die1.roll();
 		this.die2 = new Die();
-		this.roll();
+		die2.roll();
 	}
 
 	public Dice(Die die1, Die die2) // overloaded constructor
@@ -48,6 +48,14 @@ public class Dice {
 		return this.lastRoll;
 	}
 
+	public int die1GetLastRoll() {
+		return die1.getLastRoll();
+	}
+	
+	public int die2GetLastRoll() {
+		return die2.getLastRoll();
+	}
+	
 	public void roll() {
 		// Roll each of die1, die2, sum their last rolls,
 		// then set Dice.lastRoll to this value

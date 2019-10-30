@@ -1,5 +1,4 @@
 import edu.princeton.cs.introcs.*;
-import java.util.Scanner;
 
 //You should implement SkunkApp with starting main() and other classes so that your app 
 //plays a complete interactive Turn of Skunk with one human Player. A Turn starts with 
@@ -23,22 +22,11 @@ public class SkunkApp {
 		String[] namePlayers = new String[numPlayers];
 
 		// loop over array to save user input
-//		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter the players names.");
 		for (int i = 0; i < numPlayers; i++) {
-//			String userInput = sc.next();
-//			String namePlayers[i] = StdIn.readString();
-//			namePlayers[i] = userInput;
-//	        a = [] # start an empty list
-//    		n = int(input()) # read number of element in the list
-//    		for i in range(n): 
-//    		    new_element = int(input()) # read next element
-//    		    a.append(new_element) # add it to the list
-//    		    # the last two lines could be replaced by one:
-//    		    # a.append(int(input()))
 	        System.out.print("Enter a player's name: ");
 	        namePlayers[i] = StdIn.readString();
-	        System.out.println("Player's name read from console is : \n"+ namePlayers[i]);	
+//	        System.out.println("Player's name read from console is : \n"+ namePlayers[i]);	
 		}
 
 		// Decide whether to do a die random # or sequential # generation.
@@ -55,7 +43,7 @@ public class SkunkApp {
 		
 
 		while (true) {
-			StdOut.println("I am in the while loop now!");
+			StdOut.println("In the while loop now!");
 			Turn playTurn = new Turn();
 			StdOut.println("Player's score is: " + playTurn.getTurnScore());
 
@@ -76,7 +64,7 @@ public class SkunkApp {
 						// after each subsequent roll.
 			StdOut.println("Do you want to roll or roll again? Please enter a 'yes' or 'no' answer.");
 			continueToRoll = StdIn.readString().toLowerCase();
-			roll.throwDice();
+//			roll.throwDice();
 //			StdOut.println("I am here!");
 			if (continueToRoll.equals("yes")) {
 				StdOut.println("Rolling");
