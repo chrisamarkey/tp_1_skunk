@@ -5,8 +5,8 @@ import edu.princeton.cs.introcs.StdOut;
 public class Roll {
 
 	private int rollScore = 0;
-	private int turnScore;
-	private int gameScore;
+	private int turnScore = 0;
+	private int gameScore = 0;
 	private Dice newDice;
 //	private Die die1;
 //	private Die die2;
@@ -14,11 +14,12 @@ public class Roll {
 //	private boolean eraseTurnScore = false;
 //	private boolean eraseGameScore = false;
 	private int playerChipCount;
-
+	
 	public int throwDice() {
 
 		StdOut.println("throwDice() object is constructed now.");
 		this.newDice = new Dice(); 
+		newDice.roll();
 //		this.die1 = new Die();
 //		this.die2 = new Die();
 //		this.newDice = new Dice(die1, die2);

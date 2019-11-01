@@ -17,7 +17,6 @@ public class SkunkApp {
 		// taking String array input from user
 		System.out.println("Please enter the number of players in this game.");
 		int numPlayers = StdIn.readInt();
-
 		// create a String array to save user input
 		String[] namePlayers = new String[numPlayers];
 
@@ -35,30 +34,28 @@ public class SkunkApp {
 
 		int num = 0;
 		Game newGame = new Game(numPlayers, namePlayers[num]);
-		StdOut.println(newGame.getGameScore());
+//		StdOut.println("getGameScore" + newGame.getGameScore());
+//		newGame.playTurn.getTurnScore();
+		
 		
 		Player player = new Player(numPlayers, namePlayers[num]);
 		player.setPlayer();
 		StdOut.println("Player's name is: " + namePlayers[num]);
 		
+		for (int j = 0; j <= numPlayers; j++ ) {
+
+		int count = 0;
+		
+//			Turn playTurn = new Turn();
 
 		while (true) {
 			StdOut.println("In the while loop now!");
-			Turn playTurn = new Turn();
-			StdOut.println("Player's score is: " + playTurn.getTurnScore());
-
+			count = count + 1;
 			Roll roll = new Roll();
-			StdOut.println(roll.getRollScore());
+			StdOut.println("Count = " + count);
+//			StdOut.println("getRollScore " + roll.getRollScore());
 			
 			String continueToRoll = null;
-
-//			// These if else statements continuously check whether the player loses his turn or not.
-//			if (roll.playerLosesTurn() == true) {
-//				continueToRoll = "no";
-//			} 
-//			else {
-//				continueToRoll = "yes";
-//			}
 			
 			// This question can be used when an individual player start their rolls and
 						// after each subsequent roll.
@@ -70,10 +67,12 @@ public class SkunkApp {
 				StdOut.println("Rolling");
 				roll.throwDice();
 				StdOut.println("Roll score for this roll is " + roll.getRollScore());
+				StdOut.println("Score for turn: " + newGame.playTurn.playersTurn(roll));
+				StdOut.println("Score for game: " + newGame.getGameScore());				
 			} else if (continueToRoll.equals("no") || roll.playerLosesTurn() == true) {
 				StdOut.println("Ending turn for player: " + namePlayers[num]);
 				StdOut.println("Roll score: " + roll.getRollScore());
-				StdOut.println("Score for turn: " + playTurn.getTurnScore());
+				StdOut.println("Score for turn: " + newGame.playTurn.getTurnScore());
 				StdOut.println("Score for game: " + newGame.getGameScore());
 				num++;
 				break;
@@ -81,6 +80,8 @@ public class SkunkApp {
 				StdOut.println("Please enter 'yes' or 'no'");
 			}
 
+		}
+		
 		}
 	}
 }

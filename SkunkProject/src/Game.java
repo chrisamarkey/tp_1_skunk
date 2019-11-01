@@ -21,7 +21,7 @@ public class Game {
 		StdOut.println("Game(int playerCount, String playerID) object is constructed now.");
 		this.numPlayers = playerCount;	
 		this.playersName = playerID;
-		Player player = new Player(playerCount, playerID);
+//		Player player = new Player(playerCount, playerID);
 
 	}
 	
@@ -36,11 +36,11 @@ public class Game {
 	}
 	
 	public int getGameScore() {
-		if (rollDice.playerLosesTurn() == true) {
+		if (rollDice.playerLosesTurn() == true & rollDice.getRollScore() == 2) {
 			gameScore = 0;
 		}
 		else {
-			gameScore += playTurn.getTurnScore();
+			gameScore = playTurn.getTurnScore();
 		}
 		return this.gameScore;
 	}

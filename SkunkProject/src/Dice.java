@@ -88,7 +88,7 @@ public class Dice {
 
 		for (int i = 0; i < NUM_TRIALS; i++) {
 			dice.roll();
-			StdOut.println(dice);
+			StdOut.println("Dice from the public static void main class" + dice);
 
 			if (dice.getLastRoll() == 2)
 				doubleSkunkCount++;

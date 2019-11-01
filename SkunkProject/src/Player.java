@@ -10,7 +10,7 @@ public class Player {
 	Game newGame = new Game();
 	Roll roll = new Roll();
 //	Skipping player takes a turn and going directly to Roll class using Roll and Skunk
-//	classes to control the turn and return the results of the turn.
+//	"classes to control the turn and return the results of the turn".
 //	Turn turn = new Turn();
 	
 	public Player(int playerCount, String playerID) {
