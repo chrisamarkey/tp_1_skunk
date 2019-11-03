@@ -1,4 +1,4 @@
-import edu.princeton.cs.introcs.StdOut;
+//import edu.princeton.cs.introcs.StdOut;
 
 //import edu.princeton.cs.introcs.StdOut;
 
@@ -8,28 +8,19 @@ public class Roll {
 	private int turnScore = 0;
 	private int gameScore = 0;
 	private Dice newDice;
-//	private Die die1;
-//	private Die die2;
 	private boolean loseTurn = false;
-//	private boolean eraseTurnScore = false;
-//	private boolean eraseGameScore = false;
 	private int playerChipCount;
 	
 	public int throwDice() {
 
-		StdOut.println("throwDice() object is constructed now.");
+//		StdOut.println("throwDice() object is constructed now.");
 		this.newDice = new Dice(); 
 		newDice.roll();
-//		this.die1 = new Die();
-//		this.die2 = new Die();
-//		this.newDice = new Dice(die1, die2);
 
 		// Double Skunk rolled
 		if (newDice.getLastRoll() == 2) {
 			rollScore = 0;
-//			eraseTurnScore = true;
 			turnScore = 0;
-//			eraseGameScore = true;
 			gameScore = 0;
 			this.playerChipCount += -4;
 			loseTurn = true;
@@ -38,7 +29,6 @@ public class Roll {
 		// Skunk rolled
 		else if ((newDice.die1GetLastRoll() == 1 || newDice.die2GetLastRoll() == 1)) {
 			rollScore = 0;
-//			eraseTurnScore = true;
 			turnScore = 0;
 			this.playerChipCount += -1;
 			loseTurn = true;
@@ -48,14 +38,13 @@ public class Roll {
 		// Skunk Deuce rolled
 		else if (newDice.getLastRoll() == 3) {
 			rollScore = 0;
-//			eraseTurnScore = true;
 			turnScore = 0;
 			playerChipCount += -2;
 			loseTurn = true;
 
 		} else
 			rollScore = newDice.getLastRoll();
-			StdOut.println("This prints the rollScore w/in the Roll class " + rollScore);
+//			StdOut.println("This prints the rollScore w/in the Roll class " + rollScore);
 		return rollScore;
 
 	}

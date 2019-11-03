@@ -22,7 +22,7 @@ public class Dice {
 	// Convention: after instance fields/variables
 
 	public Dice() {
-		StdOut.println("Dice() object is constructed now.");
+//		StdOut.println("Dice() object is constructed now.");
 		// initialize instance variables die1 and die2 by
 		// creating a new instance of each
 
@@ -34,7 +34,7 @@ public class Dice {
 
 	public Dice(Die die1, Die die2) // overloaded constructor
 	{
-		StdOut.println("Dice(Die die1, Die die2) object is constructed now.");
+//		StdOut.println("Dice(Die die1, Die die2) object is constructed now.");
 		this.die1 = die1;
 		die1.roll();
 		this.die2 = die2;

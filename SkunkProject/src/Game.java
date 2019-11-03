@@ -1,25 +1,25 @@
-import edu.princeton.cs.introcs.StdOut;
+//import edu.princeton.cs.introcs.StdOut;
 
 //import edu.princeton.cs.introcs.*;
 
 public class Game {
 
-//	String[] playersNames = new String[] {"Chris", "Grant", "Sally", "Pat", "Mike"};
 	int numPlayers = 0;
-	int playerNumber = 0;
-	String playersName = null;
-	Turn playTurn = new Turn();
-	int gameScore = 0;
-	Roll rollDice = new Roll();
+	int playerNumber = 6;
 	int playerName;
-	int[] gamesScores;
+	String playersName = null;
+	int[] gamesScores = null;
+	int[] gamesChipCount = null;
+	int gameScore = 0;
+	Turn playTurn = new Turn(playerNumber);
+	Roll rollDice = new Roll();
 
 	public Game() {
 
 	}
 
 	public Game(int playerCount, String playerID) {
-		StdOut.println("Game(int playerCount, String playerID) object is constructed now.");
+//		StdOut.println("Game(int playerCount, String playerID) object is constructed now.");
 		this.numPlayers = playerCount;
 		this.playersName = playerID;
 		gamesScores = new int[numPlayers];
@@ -48,8 +48,15 @@ public class Game {
 	}
 
 	public int getGamesScores(int j) {
-		gamesScores[j] += gameScore;
+//		gamesScores[j] += gameScore;
+		gamesScores[j] = gameScore;
 		return gamesScores[j];
+	}
+	
+	public int getGameChipScore(int j) {
+		
+		gamesChipCount[j] = rollDice.updateChipCount();
+		return this.gamesChipCount[j];
 	}
 
 }

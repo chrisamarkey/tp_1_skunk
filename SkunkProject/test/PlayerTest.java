@@ -26,7 +26,7 @@ class PlayerTest {
 	@Test	
 	public void testPlayer3() {
 		
-		assertEquals("testPlayer3", 1, player.getPlayerNum());
+		assertEquals("testPlayer3", 0, player.getPlayerNum());
 		
 	}
 	

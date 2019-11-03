@@ -48,43 +48,41 @@ public class SkunkApp {
 			int count = 0;
 
 //			Turn playTurn = new Turn();
+			
+//			StdOut.println("In outer while loop. Player j value = " + j);
 
 			while (true) {
-				StdOut.println("In the while loop now!");
+//				StdOut.println("In the while loop now!");
 				count = count + 1;
 				Roll roll = new Roll();
-				StdOut.println("Player # is " + j);
-				StdOut.println("Count = " + count);
+//				StdOut.println("Player # is " + j);
+//				StdOut.println("Count = " + count);
 //			StdOut.println("getRollScore " + roll.getRollScore());
 
 				String continueToRoll = null;
 
 				// This question can be used when an individual player start their rolls and
 				// after each subsequent roll.
-				StdOut.println("Do you want to roll or roll again? Please enter a 'yes' or 'no' answer.");
+				StdOut.println(namePlayers[j] + " Do you want to roll or roll again? Please enter a 'yes' or 'no' answer.");
 				continueToRoll = StdIn.readString().toLowerCase();
 //			roll.throwDice();
 //			StdOut.println("I am here!");
 				if (continueToRoll.equals("yes")) {
-					StdOut.println("Rolling");
+					StdOut.println(namePlayers[j] + " is rolling");
 					roll.throwDice();
 					StdOut.println("Roll score for this roll is " + roll.getRollScore());
-					StdOut.println("Score for turn: " + newGame.playTurn.playersTurn(roll));
+					StdOut.println("Score for turn: " + newGame.playTurn.playersTurn(roll, j));
 					newGame.getGameScore();
 					StdOut.println("Score for game: " + newGame.getGamesScores(j));
 				}
 				if (continueToRoll.equals("no") || roll.playerLosesTurn() == true || newGame.gamesScores[j] > 100) {
 					StdOut.println("Ending turn for player: " + namePlayers[j]);
-					StdOut.println("Roll score: " + roll.getRollScore());
-					StdOut.println("Score for turn: " + newGame.playTurn.getTurnScore());
-					StdOut.println("Score for game: " + newGame.getGameScore());
-					StdOut.println("At break statement!");
+//					StdOut.println("Roll score: " + roll.getRollScore());
+					StdOut.println("Score for turn: " + newGame.playTurn.getTurnScore() + "Score for game: " + newGame.getGamesScores(j));
+//					StdOut.println("At break statement!");
 					break;
 				}
-//					else {
-//				StdOut.println("Please enter 'yes' or 'no'");
-//				}
-
+				
 			}
 
 			if (newGame.gamesScores[j] < 100) {

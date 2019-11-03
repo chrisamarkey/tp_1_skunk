@@ -1,4 +1,4 @@
-import edu.princeton.cs.introcs.StdOut;
+//import edu.princeton.cs.introcs.StdOut;
 
 public class Player {
 
@@ -16,7 +16,7 @@ public class Player {
 	public Player(int playerCount, String playerID) {
 		this.playerName = playerID;
 		this.playerNum = playerCount;
-			StdOut.println("Player(int playerCount, String playerID) object is constructed now.");
+//			StdOut.println("Player(int playerCount, String playerID) object is constructed now.");
 //			this.playerScore = player.getPlayerScore();
 //			StdOut.println("playerScore w/in the Player class = " + this.getPlayerScore());
 
@@ -25,7 +25,7 @@ public class Player {
 	public Player() {
 //		player.getPlayerName();
 //		player.getPlayerNum();
-			StdOut.println("Player() object is constructed now.");
+//			StdOut.println("Player() object is constructed now.");
 //			this.playerScore = player.getPlayerScore();
 
 	}
@@ -42,10 +42,6 @@ public class Player {
 	public int getPlayerNum() {
 		return this.playerNum;
 	}
-
-//	public void setPlayerScore() {
-//		playerScore = 0;
-//	}
 
 	public int getPlayerScore() {
 		this.playerScore += newGame.getGameScore();

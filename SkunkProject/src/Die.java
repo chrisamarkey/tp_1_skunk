@@ -1,4 +1,4 @@
-import edu.princeton.cs.introcs.StdOut;
+//import edu.princeton.cs.introcs.StdOut;
 
 public class Die
 {
@@ -13,13 +13,13 @@ public class Die
 	
 	public Die()
 	{
-		StdOut.println("Die() object is constructed now.");
+//		StdOut.println("Die() object is constructed now.");
 		this.roll();
 	}
 
 	public Die(int[] seqRolls)
 	{
-		StdOut.println("Die(int[] seqRolls) object is constructed now.");
+//		StdOut.println("Die(int[] seqRolls) object is constructed now.");
 		// predictable = true;
 		this.roll();
 		this.seqRoll = seqRolls;
