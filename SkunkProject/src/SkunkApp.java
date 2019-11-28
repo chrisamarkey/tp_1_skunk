@@ -14,28 +14,21 @@ public class SkunkApp {
 
 		StdOut.println("Welcome to the Skunk game! Good luck! Don't get skunked!");
 
-		// taking String array input from user
+		// Taking String array input from user
 		System.out.println("Please enter the number of players in this game.");
 		int numPlayers = StdIn.readInt();
-		// create a String array to save user input
+		// Create a String array to save user input
 		String[] namePlayers = new String[numPlayers];
 
-		// loop over array to save user input
+		// Loop over array to save user input
 		System.out.println("Please enter the players names.");
 		for (int i = 0; i < numPlayers; i++) {
 			System.out.print("Enter a player's name: ");
 			namePlayers[i] = StdIn.readString();
-//	        System.out.println("Player's name read from console is : \n"+ namePlayers[i]);	
 		}
-
-		// Decide whether to do a die random # or sequential # generation.
-//		StdOut.println("Enter a '1' for a random die # generation or a '0' for sequential die # generation.");
-//		int RollType = StdIn.readInt();
 
 		int num = 0;
 		Game newGame = new Game(numPlayers, namePlayers[num]);
-//		StdOut.println("getGameScore" + newGame.getGameScore());
-//		newGame.playTurn.getTurnScore();
 
 		Player player = new Player(numPlayers, namePlayers[num]);
 		player.setPlayer();
@@ -47,26 +40,16 @@ public class SkunkApp {
 
 			int count = 0;
 
-//			Turn playTurn = new Turn();
-			
-//			StdOut.println("In outer while loop. Player j value = " + j);
-
 			while (true) {
-//				StdOut.println("In the while loop now!");
 				count = count + 1;
 				Roll roll = new Roll();
-//				StdOut.println("Player # is " + j);
-//				StdOut.println("Count = " + count);
-//			StdOut.println("getRollScore " + roll.getRollScore());
-
 				String continueToRoll = null;
 
 				// This question can be used when an individual player start their rolls and
 				// after each subsequent roll.
-				StdOut.println(namePlayers[j] + " Do you want to roll or roll again? Please enter a 'yes' or 'no' answer.");
+				StdOut.println(
+						namePlayers[j] + " Do you want to roll or roll again? Please enter a 'yes' or 'no' answer.");
 				continueToRoll = StdIn.readString().toLowerCase();
-//			roll.throwDice();
-//			StdOut.println("I am here!");
 				if (continueToRoll.equals("yes")) {
 					StdOut.println(namePlayers[j] + " is rolling");
 					roll.throwDice();
@@ -77,12 +60,11 @@ public class SkunkApp {
 				}
 				if (continueToRoll.equals("no") || roll.playerLosesTurn() == true || newGame.gamesScores[j] > 100) {
 					StdOut.println("Ending turn for player: " + namePlayers[j]);
-//					StdOut.println("Roll score: " + roll.getRollScore());
-					StdOut.println("Score for turn: " + newGame.playTurn.getTurnScore() + "Score for game: " + newGame.getGamesScores(j));
-//					StdOut.println("At break statement!");
+					StdOut.println("Score for turn: " + newGame.playTurn.getTurnScore() + "Score for game: "
+							+ newGame.getGamesScores(j));
 					break;
 				}
-				
+
 			}
 
 			if (newGame.gamesScores[j] < 100) {

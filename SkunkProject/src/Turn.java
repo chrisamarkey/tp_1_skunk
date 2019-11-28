@@ -22,14 +22,10 @@ public class Turn {
 		if (rollDice.playerLosesTurn() == true) {
 //			Stop rolling the dice. Your turn is over.
 			turnsScores[playerNum] = 0;
-//			turnScore = 0;
-//			return this.turnScore;
 			return this.turnsScores[playerNum];
 		}
 			else {
-//			turnScore += rollDice.getRollScore();
 			turnsScores[playerNum] += rollDice.getRollScore();
-//			return this.turnScore;
 			return this.turnsScores[playerNum];
 			}	
 	}

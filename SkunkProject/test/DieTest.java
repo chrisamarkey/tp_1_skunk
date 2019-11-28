@@ -36,9 +36,6 @@ public class DieTest {
 		int[] initValues = new int[] { 1, 2, 3, 4, 5, 6 };
 		Die die = new Die(initValues);
 		die.roll();
-//		StdOut.print("testRoll2 value roll 2 = " + die.getLastRoll());
-//		assertEquals("First value not 1", 1, die.getLastRoll());
-		die.roll();
 		int value = die.getLastRoll();
 		StdOut.print("testRoll3 value roll 3 = " + value);
 		assertEquals("Second value not 3", 3, value);
@@ -114,10 +111,9 @@ public class DieTest {
         die.roll();
         int value = die.getLastRoll();
  	    if ( value >= 7 ) {
-//	      StdOut.print(value + " is greater than or equal to 7!");
 	      fail();
  	    } else {
-//	      StdOut.print(value + " doesn't equal 7 ");
+	      StdOut.print(value + " doesn't equal 7 ");
  	    }
  	  counter++;
 	  }

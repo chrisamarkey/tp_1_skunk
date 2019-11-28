@@ -19,14 +19,12 @@ public class Game {
 	}
 
 	public Game(int playerCount, String playerID) {
-//		StdOut.println("Game(int playerCount, String playerID) object is constructed now.");
 		this.numPlayers = playerCount;
 		this.playersName = playerID;
 		gamesScores = new int[numPlayers];
 		for (int i = 0; i < numPlayers; i++) {
 			gamesScores[i] = 0;
 		}
-//		Player player = new Player(playerCount, playerID);
 
 	}
 
@@ -48,7 +46,6 @@ public class Game {
 	}
 
 	public int getGamesScores(int j) {
-//		gamesScores[j] += gameScore;
 		gamesScores[j] = gameScore;
 		return gamesScores[j];
 	}

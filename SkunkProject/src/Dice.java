@@ -34,7 +34,6 @@ public class Dice {
 
 	public Dice(Die die1, Die die2) // overloaded constructor
 	{
-//		StdOut.println("Dice(Die die1, Die die2) object is constructed now.");
 		this.die1 = die1;
 		die1.roll();
 		this.die2 = die2;
@@ -60,8 +59,6 @@ public class Dice {
 		// Roll each of die1, die2, sum their last rolls,
 		// then set Dice.lastRoll to this value
 
-//		die1.roll();
-//		die2.roll();
 		this.lastRoll = die1.getLastRoll() + die2.getLastRoll();
 
 	}
@@ -70,10 +67,6 @@ public class Dice {
 	// this Dice object, and returns a descriptive String:
 	//
 	// Roll of 7 => 4 + 3
-
-//	public String toString() {
-//		return "Dice with last roll: " + getLastRoll() + " => " + die1.getLastRoll() + " + " + die2.getLastRoll();
-//	}
 
 //	** Is this section of code needed for our program? I don't think so. **
 	// static methods can go anywhere - but at end is one convention

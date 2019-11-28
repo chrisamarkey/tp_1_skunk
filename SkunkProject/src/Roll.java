@@ -10,11 +10,10 @@ public class Roll {
 	private Dice newDice;
 	private boolean loseTurn = false;
 	private int playerChipCount;
-	
+
 	public int throwDice() {
 
-//		StdOut.println("throwDice() object is constructed now.");
-		this.newDice = new Dice(); 
+		this.newDice = new Dice();
 		newDice.roll();
 
 		// Double Skunk rolled
@@ -32,7 +31,7 @@ public class Roll {
 			turnScore = 0;
 			this.playerChipCount += -1;
 			loseTurn = true;
-			
+
 		}
 
 		// Skunk Deuce rolled
@@ -44,14 +43,13 @@ public class Roll {
 
 		} else
 			rollScore = newDice.getLastRoll();
-//			StdOut.println("This prints the rollScore w/in the Roll class " + rollScore);
 		return rollScore;
 
 	}
 
 //	Setup Turn method to trigger on this method being true before updating chip counts, roll score, turn score and game score.
 //	except for rollscore which should always be updated from calling updateRollScore from this class.
-	
+
 	public boolean playerLosesTurn() {
 		return this.loseTurn;
 	}
@@ -59,7 +57,7 @@ public class Roll {
 	public int getRollScore() {
 		return this.rollScore;
 	}
-	
+
 	public int updateChipCount() {
 		return this.playerChipCount;
 	}
@@ -71,7 +69,7 @@ public class Roll {
 	public int updateGameScore() {
 		return this.gameScore;
 	}
-	
+
 	public int updateKitty() {
 		return -this.playerChipCount;
 	}
