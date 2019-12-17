@@ -7,8 +7,8 @@ import org.junit.Test;
 import edu.princeton.cs.introcs.StdOut;
 
 // Notes: 
-//   1. To use this test class to run all tests except for testRoll0 and testRoll7, you need to set Die class's private int RollType to 0;
-//   2. To use this test class to run testRoll0 and testRoll7, you need to set Die class's private int RollType to 1;
+//   1. All tests pass when you set Die class's private int RollType to 0, i.e. to a predictable die roll. The standard Skunk program sets this value to 1 though!.
+//   2. Only testRoll0 and testRoll7 pass when you set Die class's private int RollType to 1, i.e. dice set to a non-predictable die roll.
 
 public class DieTest {
 
@@ -27,7 +27,7 @@ public class DieTest {
 		Die die = new Die(initValues);
 		int value = die.getLastRoll();
 		StdOut.print("Initialize Predictable Die = " + value);		
-		assertEquals("First value is not 1", 1, value);
+		assertEquals("Assert if value is not 1", 1, value);
 	}
 
 	@Test
@@ -38,7 +38,7 @@ public class DieTest {
 		die.roll();
 		int value = die.getLastRoll();
 		StdOut.print("testRoll3 value roll 3 = " + value);
-		assertEquals("Second value not 3", 3, value);
+		assertEquals("Assert if value is not 2", 2, value);
 	}
 
 	@Test
@@ -51,7 +51,7 @@ public class DieTest {
 		die.roll();
 		int value = die.getLastRoll();
 		StdOut.print("testRoll3 value = " + value);
-		assertEquals("/n First value not 4", 4, value);
+		assertEquals("Assert if value is not 4", 4, value);
 	}
 
 	@Test
@@ -74,7 +74,7 @@ public class DieTest {
 		StdOut.print("Roll 7 = " + die.getLastRoll());
 		int value = die.getLastRoll();
 //		StdOut.print("testRoll7a value = " + value);
-		assertEquals("First value not 1", 1, value);
+		assertEquals("Assert if value is not 1", 1, value);
 
 	}
 
