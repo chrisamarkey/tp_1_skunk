@@ -12,6 +12,9 @@ class RollTest {
 
 	Dice newDice;
 
+//	private int[] seqRoll = {1,2,3,4,5,6};
+//	Die newDie = new Die(seqRoll);
+
 	@Test
 	// This tests whether testDie1 rolled a 1 or not.
 	public void testRoll1() {
@@ -21,7 +24,10 @@ class RollTest {
 
 		newDice = new Dice(testDie1, testDie2);
 		newDice.roll();
-		assertEquals("testDie1 rolled a Skunk!", 1, testDie1.getLastRoll());
+		
+		if (testDie1.getLastRoll() == 1) {
+			assertEquals("testDie1 rolled a Skunk!", 1, testDie1.getLastRoll());
+		}
 	}
 
 	@Test
@@ -33,7 +39,10 @@ class RollTest {
 
 		newDice = new Dice(testDie1, testDie2);
 		newDice.roll();
-		assertEquals("testDie2 rolled a Skunk!", 1, testDie2.getLastRoll());
+
+		if (testDie2.getLastRoll() == 1) {
+			assertEquals("testDie2 rolled a Skunk!", 1, testDie2.getLastRoll());
+		}
 	}
 
 	@Test
@@ -45,8 +54,9 @@ class RollTest {
 
 		newDice = new Dice(testDie1, testDie2);
 		newDice.roll();
-		assertEquals("newDice rolled a Double Skunk!", 2, newDice.getLastRoll());
-
+		if (newDice.die1GetLastRoll() == 2) {
+			assertEquals("newDice rolled a Double Skunk!", 2, newDice.getLastRoll());
+		}
 	}
 
 	@Test
