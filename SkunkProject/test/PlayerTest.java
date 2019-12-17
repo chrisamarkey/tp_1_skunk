@@ -1,25 +1,26 @@
+import edu.princeton.cs.introcs.*;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+
 class PlayerTest {
-	
-//	private int playerNum;
-//	private String playerID;
 
 	Player player = new Player();
+	Roll roll = new Roll();
+	Game newGame = new Game(1, "Chris");
 	
 	@Test
 	public void testPlayer1() {
 		
-		assertEquals("testPlayer1", 0, player.getPlayerScore());
+		assertEquals("testPlayer1", 0, player.getPlayerScore(1));
 		
 	}
 
 	@Test	
 	public void testPlayer2() {
-		
-		assertEquals("testPlayer2", 50, player.getPlayerChipCount());
+		assertEquals("testPlayer2", 50, player.getPlayerChipCount(1));
 		
 	}
 	
@@ -31,9 +32,8 @@ class PlayerTest {
 	}
 	
 	@Test	
-	public void testPlayer4() {
-		
-		assertEquals("testPlayer2", "Chris", player.getPlayerName());
+	public void testPlayer4() {	
+		assertEquals("testPlayer2", "Chris", newGame.getPlayerName());
 		
 	}
 
