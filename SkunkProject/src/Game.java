@@ -1,6 +1,7 @@
+
 //import edu.princeton.cs.introcs.StdOut;
 
-//import edu.princeton.cs.introcs.*;
+import edu.princeton.cs.introcs.*;
 
 public class Game {
 
@@ -9,11 +10,11 @@ public class Game {
 	int playerName;
 	String playersName = null;
 	int[] gamesScores = null;
-	int[] gamesChipCount = null;
+	int[] gamesChipCount = { 50, 50, 50, 50, 50 }; //12/14/19
 	int gameScore = 0;
-	Turn playTurn = new Turn(playerNumber);
 	Roll rollDice = new Roll();
-
+	Turn playTurn = new Turn(playerNumber);
+	
 	public Game() {
 
 	}
@@ -23,7 +24,8 @@ public class Game {
 		this.playersName = playerID;
 		gamesScores = new int[numPlayers];
 		for (int i = 0; i < numPlayers; i++) {
-			gamesScores[i] = 0;
+			this.gamesScores[i] = 0;
+//			this.gamesChipCount[i] = 0; //12/14/19
 		}
 
 	}
@@ -38,22 +40,35 @@ public class Game {
 
 	public int getGameScore() {
 		if (rollDice.playerLosesTurn() == true & rollDice.getRollScore() == 2) {
-			gameScore = 0;
+			this.gameScore = 0;
+//			this.setPlayerGameScore(j); // 12-14-19
+			StdOut.println("You rolled a double skunk!!!!");
 		} else {
-			gameScore = playTurn.getTurnScore();
+			this.gameScore += playTurn.getTurnScore(); // 12/14/19 Issue with this logic!
+//			this.gameScore = playTurn.getTurnScore(); // 12/14/19 Issue with this logic!
 		}
 		return this.gameScore;
 	}
 
-	public int getGamesScores(int j) {
-		gamesScores[j] = gameScore;
+	public int getPlayerGameScore(int j) {
+//		gamesScores[j] += gameScore;
+		gamesScores[j] = playTurn.playersTurn(rollDice, j);
 		return gamesScores[j];
 	}
 	
-	public int getGameChipScore(int j) {
+	public void setPlayerGameScore(int j) {
 		
-		gamesChipCount[j] = rollDice.updateChipCount();
-		return this.gamesChipCount[j];
+	}
+
+	public int getPlayerGameChipScore(int j) {
+		if (rollDice.playerLosesTurn() == true & rollDice.getRollScore() == 2) {
+			StdOut.println("You rolled a double skunk!!!!");
+			return this.gamesChipCount[j];
+		} else {
+//			gamesChipCount[j] = rollDice.updateChipCount();
+//			return this.gamesChipCount[j];
+			return this.rollDice.updateChipCount();
+		}
 	}
 
 }
