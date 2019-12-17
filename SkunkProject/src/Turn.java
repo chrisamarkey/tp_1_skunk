@@ -26,6 +26,7 @@ public class Turn {
 		}
 			else {
 			turnsScores[playerNum] += rollDice.getRollScore();
+//			getRollScore();
 			return this.turnsScores[playerNum];
 			}	
 	}
