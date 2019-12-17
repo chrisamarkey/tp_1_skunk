@@ -52,16 +52,21 @@ public class SkunkApp {
 				continueToRoll = StdIn.readString().toLowerCase();
 				if (continueToRoll.equals("yes")) {
 					StdOut.println(namePlayers[j] + " is rolling");
-					roll.throwDice();
+					roll.throwDice(j);
 					StdOut.println("Roll score for this roll is " + roll.getRollScore());
-					StdOut.println("Score for turn: " + newGame.playTurn.playersTurn(roll, j));
-					newGame.getGameScore();
-					StdOut.println("Score for game: " + newGame.getGamesScores(j));
+					StdOut.println("Die1 roll score is " + roll.getDie1Score());
+					StdOut.println("Die2 roll score is " + roll.getDie2Score());
+					StdOut.println("Roll score for turn: " + newGame.playTurn.playersTurn(roll, j));
+					StdOut.println("Player chip count: " + roll.updateChipCount());
+					StdOut.println("Roll score for game: " + newGame.getPlayerGameScore(j));
 				}
 				if (continueToRoll.equals("no") || roll.playerLosesTurn() == true || newGame.gamesScores[j] > 100) {
 					StdOut.println("Ending turn for player: " + namePlayers[j]);
-					StdOut.println("Score for turn: " + newGame.playTurn.getTurnScore() + "Score for game: "
-							+ newGame.getGamesScores(j));
+					StdOut.println("************************************************");
+					StdOut.println("Roll score for turn: " + newGame.playTurn.getTurnScore());
+					//NOTE: Roll score for the game should not be 0 when roll a Skunk only!
+					StdOut.println("Roll score for game: " + newGame.getPlayerGameScore(j));
+					StdOut.println("Chip count for the game: " + roll.updateChipCount());
 					break;
 				}
 
